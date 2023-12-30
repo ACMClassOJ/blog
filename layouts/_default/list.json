@@ -1,0 +1,11 @@
+{{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections -}}
+{{ $articles := slice -}}
+{{ $paginator := .Paginate $pages 5 -}}{{ range $index, $page := $paginator.Pages -}}
+{{ $articles = $articles | append (dict
+  "title" .Title
+  "date" .Date.Unix
+  "link" .Permalink
+  "weight" .Weight
+) -}}
+{{ end -}}
+{{ $articles | jsonify -}}

@@ -1,0 +1,4 @@
+<figure>
+  <img src="{{ (($.Page.Resources.Get .Destination).Process "webp").RelPermalink | safeURL }}" alt="{{ .Text }}" {{ with .Title }}title="{{ . }}"{{ end }}>
+  <figcaption class="text-center">{{ with .Title }} {{ . | markdownify }} {{ end }}</figcaption>
+</figure>

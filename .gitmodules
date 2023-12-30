@@ -1,0 +1,3 @@
+[submodule "themes/paper"]
+	path = themes/paper
+	url = https://git.altk.org/acmoj/hugo-paper

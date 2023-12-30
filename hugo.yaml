@@ -1,0 +1,38 @@
+baseURL: https://acm.sjtu.edu.cn/OnlineJudge/blog/
+languageCode: zh-CN
+title: The ACMOJ Blog
+paginate: 10
+
+theme: paper
+
+markup:
+  goldmark:
+    renderer:
+      # we definitely trust our admins not messing up with HTML.
+      unsafe: true
+
+permalinks:
+  page:
+    posts: /:filename
+
+params:
+  rss: true
+
+menu:
+  main:
+  - identifier: back
+    name: Back to ACMOJ
+    url: https://acm.sjtu.edu.cn/OnlineJudge/
+    weight: 10
+
+outputFormats:
+  json:
+    isPlainText: true
+    mediaType: application/json
+    notAlternative: true
+
+outputs:
+  home:
+  - html
+  - json
+  - rss
