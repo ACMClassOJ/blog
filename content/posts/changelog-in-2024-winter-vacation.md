@@ -1,7 +1,6 @@
 ---
 title: 2024 寒假更新日志
 date: 2024-02-15T16:00:00+08:00
-weight: 1
 draft: false
 author:
   name: Lau YeeYu
