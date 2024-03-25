@@ -15,7 +15,7 @@ tags:
 
 <!--more-->
 
-注：比对程序在 TesutoHime 仓库的 [`judger2/checker`](https://github.com/ACMClassOJ/TesutoHime/tree/master/judger2/checker) 目录下。如要编译，可以在这个目录下执行 `scripts/build` 程序，这会在 `judger2/checker` 中生成比对程序 `checker`。
+注：比对程序在 TesutoHime 仓库的 [`judger2/checker`](https://github.com/ACMClassOJ/TesutoHime/blob/34c534e6bc67a66ebb056d23fb0cbcf26d6169d9/judger2/checker) 目录下。如要编译，可以在这个目录下执行 `scripts/build` 脚本，这会在 `judger2/checker` 中生成比对程序 `checker`。
 
 ## 问题由来
 
@@ -27,7 +27,7 @@ tags:
 
 你可能会问，那么为什么 diff 不针对 `-q`（q 表示 quiet，即不输出不同内容）的情况进行优化？实际上，diff 的确针对 `-q` 参数进行了优化，但是优化只限于仅有 `-q` 参数的情况，也就是说，我们的 `-qZB` 是不会进行优化的。
 
-既然 diff 的性能会在特定情况下存在问题，因此我们打算自己编写专用比对程序，解决性能问题。程序的原理也非常简单，读取一行，然后比对即可（在特殊情况下可以优化，具体见后文）。
+既然 diff 的性能会在特定情况下存在问题，因此我们打算自己编写专用比对程序，解决性能问题。程序的原理也非常简单，逐行读取，然后比对即可（在特殊情况下可以优化，具体见后文）。
 
 ## 比对工具的功能
 
@@ -63,6 +63,8 @@ checker [OPTION]... - [--] <FILE>
 在没有设置忽略行末空格及空行参数的时候，比对程序会每次尝试读取 4096 Bytes，然后尝试比对，在有 SIMD[^1] 指令集支持的电脑上，性能会非常好。
 
 [^1]: SIMD 是指 simple instruction multiple data，这类指令会一次操作很多的内存数据。相较于传统的每次操作字长大小的数据，这类指令因为硬件优化以及更少的指令而更为高效。
+
+我们选择每次读取数据量为 4096 Bytes 是因为每次读取的数据量需要大小适中。如果太小，那么比对的性能会受到影响；如果太大，那么我们不一定能在发现不同的第一时间退出，而且还会占用更多的内存空间。
 
 ### 支持使用输入流作为比较来源
 
