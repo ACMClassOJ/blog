@@ -17,6 +17,7 @@ permalinks:
 
 params:
   rss: true
+  math: true
 
 menu:
   main:
