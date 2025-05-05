@@ -1,7 +1,9 @@
 baseURL: https://acm.sjtu.edu.cn/OnlineJudge/blog/
 languageCode: zh-CN
 title: The ACMOJ Blog
-paginate: 10
+
+pagination:
+  pagerSize: 10
 
 theme: paper
 
