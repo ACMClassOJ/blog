@@ -1,7 +1,6 @@
 ---
 title: API 变更：获取提交记录的代码将需要 Authorization Header
 date: 2025-05-05T12:00:02+08:00
-weight: 1
 author:
   name: Alan Liang
   avatar: https://acm.sjtu.edu.cn/OnlineJudge-pic/20211124-010333-292122.png
