@@ -2,6 +2,7 @@
 title: 2025-06-20 停机维护通知
 date: 2025-06-19T11:00:00+08:00
 weight: 1
+draft: true
 author: ACMOJ 运维组
 tags:
   - 运维
