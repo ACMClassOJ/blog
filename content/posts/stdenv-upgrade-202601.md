@@ -1,7 +1,6 @@
 ---
 title: 评测环境已更新至 GCC 15 / Python 3.14
 date: 2026-02-27T23:31:38+08:00
-weight: 1
 author:
   name: Alan Liang
   avatar: https://acm.sjtu.edu.cn/OnlineJudge-pic/20211124-010333-292122.png
