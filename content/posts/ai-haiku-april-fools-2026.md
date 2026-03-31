@@ -1,6 +1,6 @@
 ---
 title: 你的提交会写俳句了
-date: 2026-04-01T12:00:00+08:00
+date: 2026-04-01T00:00:00+08:00
 weight: 2
 author:
   name: TheUnknownThing
